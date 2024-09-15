@@ -16,9 +16,9 @@ onMounted(() => {
 	// Tạo cấu hình mặc định với font chữ mới
 	const defaultFontOptions = {
 		textStyle: {
-			fontFamily: 'Segoe UI', // Thay đổi font chữ thành Arial
-			fontSize: 14,        // Kích thước font chữ
-			fontWeight: 'normal', // Độ đậm của font chữ
+			fontFamily: 'Segoe UI, sans-serif', // Thay đổi font chữ thành Arial
+			fontSize: 13,        // Kích thước font chữ
+			fontWeight: 400, // Độ đậm của font chữ
 			color: '#333'         // Màu chữ
 		}
 	}
@@ -50,9 +50,9 @@ watch(
 		const optionsWithFont = {
 			...newOptions,
 			textStyle: {
-				fontFamily: 'Segoe UI',
-				fontSize: 14,
-				fontWeight: 'normal',
+				fontFamily: 'Segoe UI, sans-serif',
+				fontSize: 13,
+				fontWeight: 400,
 				color: '#333'
 			}
 		}
