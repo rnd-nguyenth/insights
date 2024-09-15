@@ -267,7 +267,7 @@ export function getShortNumber(number, precision = 0) {
 		maximumFractionDigits: precision,
 	}).format(number)
 	// OSB - Thay ky tu M thanh Ty
-	formatted = formatted.replace('M', 'Tỷ')
+	formatted = formatted.replace('M', ' Tỷ')
 	if (locale == 'en-IN') {
 		formatted = formatted.replace('T', 'K')
 	}
