@@ -1,4 +1,4 @@
-import { formatNumber, getShortNumber } from '@/utils';
+import { formatNumber, getShortNumber , ellipsis} from '@/utils';
 import { getColors as getDefaultColors } from '@/utils/colors';
 import { graphic } from 'echarts/core';
 
@@ -136,19 +136,20 @@ function makeOptions(chartType, labels, datasets, options) {
             },
             axisLabel: {
                 rotate: 0,
-                fontSize: 14,
-                fontWeight: '500',
+                fontSize: 13,
+                fontWeight: '400',
                 lineHeight: 24,
                 interval: 0,  // Hiển thị tất cả nhãn
-                formatter: (value) => {
-                    // Nếu chuỗi quá dài, chỉ hiển thị 4 từ đầu tiên và thêm dấu "..."
-                    const words = value.split(' ');
-                    if (words.length > 4) {
-                        return words.slice(0, 4).join(' ') + '...';
-                    } else {
-                        return value;
-                    }
-                },
+                formatter: (value, _) => (!isNaN(value) ? getShortNumber(value, 1) : ellipsis(value, 20)),
+                // formatter: (value) => {
+                //     // Nếu chuỗi quá dài, chỉ hiển thị 4 từ đầu tiên và thêm dấu "..."
+                //     const words = value.split(' ');
+                //     if (words.length > 4) {
+                //         return words.slice(0, 4).join(' ') + '...';
+                //     } else {
+                //         return value;
+                //     }
+                // },
             },
         },
         yAxis: datasets.map((dataset) => ({
@@ -161,7 +162,7 @@ function makeOptions(chartType, labels, datasets, options) {
                 lineStyle: { type: 'dashed' },
             },
             axisLabel: {
-                formatter: (value) => (!isNaN(value) ? getShortNumber(value, 1) : value),
+                formatter: (value) => (!isNaN(value) ? getShortNumber(value, 1) : ellipsis(value, 20)),
             },
         })),
         series: datasets.map((dataset, index) => ({
