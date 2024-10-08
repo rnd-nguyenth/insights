@@ -188,8 +188,8 @@ function makeOptions(chartType, labels, datasets, options) {
                     : undefined,
             itemStyle: {
                 borderRadius: options.roundedBars !== undefined && index === datasets.length - 1 ? [4, 4, 0, 0] : 0,
-                barMaxWidth: 50,
             },
+            barMaxWidth: 50,
             stack: options.stack ? 'stack' : null,
             label: {
                 position: 'top',
