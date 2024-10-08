@@ -2203,7 +2203,7 @@ inherits@2:
     feather-icons "^4.28.0"
     frappe-ui "0.1.45"
     grid-layout-plus "^1.0.2"
-    insights-frontend "file:../../../.cache/yarn/v6/npm-insights-frontend-0.0.0-128a0e71-d546-4ce2-8f32-5e7d57f7e2a6-1726386851088/node_modules/insights-frontend"
+    insights-frontend "file:../../../.cache/yarn/v6/npm-insights-frontend-0.0.0-1efa3af5-0234-40e5-ad1a-304314c565cd-1728378839195/node_modules/insights-frontend"
     lucide-vue-next "^0.300.0"
     pinia "^2.0.30"
     postcss "^8.4.14"
